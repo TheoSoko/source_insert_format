@@ -12,7 +12,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-//var source = "Partis politiques"
 
 var (
 	_, file, _, _ = runtime.Caller(0)
@@ -29,16 +28,16 @@ func main() {
 
 	sites := db.GetWebsitesByCountry("es")
 
-	//fmt.Println("sites : ", sites)
-
 	formatSitesNewLine(sites, "es")
 
 }
 
-// Fetches the webistes matching cc (country code), formats them on "line by line" format, and prints them on a new file (inside dir "/out" )
+// Takes a list of websites and a country_code, prints the sites on "line by line" format in  new file (inside dir "/out" )
 func formatSitesNewLine(sites []string, cc string) {
-	fmt.Println("path" , filepath.Join(Path + "/out/" + cc + ".txt"))
-	file, err := os.Create(filepath.Join(Path + "/out/" + cc + ".txt"))
+	fileToWrite := filepath.Join(Path + "/out/" + cc + ".txt")
+	fmt.Println("path" , fileToWrite)
+	
+	file, err := os.Create(fileToWrite)
 	if err != nil {
 		log.Fatal(err)
 	}
