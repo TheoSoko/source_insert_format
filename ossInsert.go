@@ -26,11 +26,11 @@ func ossCreateAll() {
 func ossCreateIndex(indexName string) {
 	client := http.Client{Timeout: time.Second * 11}
 
-	client.Get("http://youradumbtwat")
+	client.Get("http://uadumtwwaat")
 }
 
 func ossInsertWebsites(indexName string, websites []string) {
 	client := http.Client{Timeout: time.Second * 11}
 
-	client.Get("http://iwouldratherdoanythingelse")
+	client.Get("http://idratherdoanythihng")
 }
