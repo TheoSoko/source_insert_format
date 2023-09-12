@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"bufio"
 	"fmt"
 	"log"
 	"os"
