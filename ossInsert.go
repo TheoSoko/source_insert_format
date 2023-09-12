@@ -4,15 +4,16 @@ import (
 	"net/http"
 	"time"	
 	"theosoko/ossInserter/db"
+	"theosoko/ossInserter/ressources"
 )
 
 // Gets all the country codes and souce type available, and creates an OSS index for each source type in each country.
 // Then populates the indices with corresponding webistes url (fetched from DB)
 func ossCreateAll() {
-	countryCodes := db.GetAllCountryCodes()
+	countryCodes := db.GetAvailCountryCodes()
 
 	for _, country := range countryCodes {
-		for source, sourceId := range sourceTypes {
+		for source, sourceId := range ressources.SourceTypes {
 			indexName := country + " - " + string(source)
 			ossCreateIndex(indexName)
 
@@ -26,11 +27,11 @@ func ossCreateAll() {
 func ossCreateIndex(indexName string) {
 	client := http.Client{Timeout: time.Second * 11}
 
-	client.Get("http://youradumbtwat")
+	client.Get("http://uadumtwwaat")
 }
 
 func ossInsertWebsites(indexName string, websites []string) {
 	client := http.Client{Timeout: time.Second * 11}
 
-	client.Get("http://iwouldratherdoanythingelse")
+	client.Get("http://idratherdoanythihng")
 }
